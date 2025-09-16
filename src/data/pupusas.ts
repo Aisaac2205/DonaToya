@@ -9,7 +9,7 @@ export const pupusas: Pupusa[] = [
   {
     id: 'pupusa-queso',
     name: 'Pupusa de Queso',
-    description: 'Clásica pupusa con abundante queso fresco que se derrite en tu boca',
+    description: 'Clásica pupusa con abundante queso que se derrite en tu boca.',
     price: 8.00,
     image: pupusaQuesoImg,
     category: 'tradicional'
@@ -17,7 +17,7 @@ export const pupusas: Pupusa[] = [
   {
     id: 'pupusa-chicharron',
     name: 'Pupusa de Chicharrón',
-    description: 'Pupusa rellena de chicharrón natual de la región',
+    description: 'Pupusa rellena de chicharrón natual de la región.',
     price: 8.00,
     image: pupusaChicharronImg,
     category: 'tradicional'
@@ -25,8 +25,26 @@ export const pupusas: Pupusa[] = [
   {
     id: 'pupusa-revuelta',
     name: 'Pupusa Revuelta',
-    description: 'La favorita de todos: queso, frijol y chicharrón en perfecta armonía',
+    description: 'La favorita de todos: queso, frijol y chicharrón en perfecta armonía.',
+    price: 10.00,
+    image: pupusaRevueltaImg,
+    category: 'tradicional'
+  },
+
+  {
+    id: 'pupusa-jalapeno',
+    name: 'Pupusa de Queso con jalapeño',
+    description: 'La favorita de los amantes del picante la rica combinacion de queso con jalapeño.',
     price: 8.00,
+    image: pupusaRevueltaImg,
+    category: 'tradicional'
+  },
+  
+  {
+    id: 'pupusa-mixta',
+    name: 'Pupusa Mixta',
+    description: 'El duo favorito para combinar queso y chicharron.',
+    price: 10.00,
     image: pupusaRevueltaImg,
     category: 'tradicional'
   }
