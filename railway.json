@@ -1,5 +1,13 @@
 {
-  "build": "npm run build",
-  "start": "npm run start",
-  "rootDirectory": "."
+  "services": {
+    "web": {
+      "build": {
+        "cmd": "npm run build"
+      },
+      "start": {
+        "cmd": "npm run start"
+      },
+      "rootDirectory": "."
+    }
+  }
 }
