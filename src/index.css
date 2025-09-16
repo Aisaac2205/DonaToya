@@ -18,8 +18,8 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 25 15% 15%;
 
-    /* Amarillo dorado principal */
-    --primary: 51 100% 50%;
+    /* Amarillo basado en el logo */
+    --primary: 45 100% 50%;
     --primary-foreground: 0 0% 100%;
 
     /* Verde natural guatemalteco */
@@ -38,15 +38,15 @@ All colors MUST be HSL.
 
     --border: 45 15% 88%;
     --input: 45 15% 95%;
-    --ring: 51 100% 50%;
+    --ring: 45 100% 50%;
 
     /* Gradientes especiales */
-    --gradient-primary: linear-gradient(135deg, hsl(51 100% 50%), hsl(45 100% 60%));
-    --gradient-warm: linear-gradient(180deg, hsl(45 100% 97%), hsl(51 20% 95%));
-    --gradient-hero: linear-gradient(135deg, hsl(51 100% 50%) 0%, hsl(140 35% 45%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(45 100% 50%), hsl(40 100% 60%));
+    --gradient-warm: linear-gradient(180deg, hsl(0, 0%, 0%), hsl(45 20% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(0, 0%, 0%) 100%);
 
     /* Sombras doradas */
-    --shadow-golden: 0 10px 30px -10px hsl(51 100% 50% / 0.3);
+    --shadow-golden: 0 10px 30px -10px hsl(45 100% 50% / 0.3);
     --shadow-warm: 0 5px 20px -5px hsl(25 50% 35% / 0.2);
 
     --radius: 0.75rem;
@@ -95,7 +95,7 @@ All colors MUST be HSL.
 
     --border: 25 15% 20%;
     --input: 25 15% 18%;
-    --ring: 51 100% 55%;
+    --ring: 45 100% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

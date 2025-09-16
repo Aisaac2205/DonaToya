@@ -2,8 +2,6 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MenuSection from "@/components/MenuSection";
-import CombosSection from "@/components/CombosSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
@@ -17,8 +15,8 @@ const Index = () => {
       <Header onCartClick={() => setIsCartOpen(true)} />
       <Hero />
       <MenuSection />
-      <CombosSection />
-      <TestimonialsSection />
+      {/* Combos ocultados temporalmente */}
+      {/* Testimonios eliminados por solicitud */}
       <ContactSection />
       <Footer />
       
@@ -28,7 +26,7 @@ const Index = () => {
       />
       
       <FloatingWhatsApp 
-        phoneNumber="50200000000"
+        phoneNumber="50236525443"
         message="Hola Doña Toya, me interesa hacer un pedido de pupusas. ¿Podrían ayudarme?"
       />
     </div>

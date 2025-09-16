@@ -3,7 +3,7 @@ import { ShoppingCart, Menu, X, MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/hooks/useCart";
-// import logoImg from "@/assets/logo-dona-toya.png";
+import logoImg from "@/assets/logo_original.jpg";
 
 interface HeaderProps {
   onCartClick: () => void;
@@ -28,12 +28,14 @@ const Header = ({ onCartClick }: HeaderProps) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="h-10 w-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
-              DT
-            </div>
+            <img
+              src={logoImg}
+              alt="Doña Toya - Pupusería y comida típica"
+              className="h-10 w-10 rounded-full object-cover"
+            />
             <div>
               <h1 className="text-xl font-bold text-primary">Doña Toya</h1>
-              <p className="text-xs text-muted-foreground">La Pupusería</p>
+              <p className="text-xs text-muted-foreground">El mejor sazón de la región</p>
             </div>
           </div>
 
@@ -45,7 +47,7 @@ const Header = ({ onCartClick }: HeaderProps) => {
             </div>
             <div className="flex items-center space-x-1 text-muted-foreground">
               <Phone className="h-4 w-4" />
-              <span>+502 XXXX-XXXX</span>
+              <span>+502 3652-5443</span>
             </div>
             <div className="flex items-center space-x-1 text-muted-foreground">
               <Clock className="h-4 w-4" />
@@ -61,18 +63,8 @@ const Header = ({ onCartClick }: HeaderProps) => {
             >
               Menú
             </button>
-            <button
-              onClick={() => scrollToSection('combos')}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Combos
-            </button>
-            <button
-              onClick={() => scrollToSection('testimonios')}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Testimonios
-            </button>
+            {/* Botón Combos ocultado temporalmente */}
+            {/* Botón Testimonios eliminado */}
             <button
               onClick={() => scrollToSection('contacto')}
               className="text-foreground hover:text-primary transition-colors"
@@ -119,18 +111,8 @@ const Header = ({ onCartClick }: HeaderProps) => {
               >
                 Menú de Pupusas
               </button>
-              <button
-                onClick={() => scrollToSection('combos')}
-                className="text-left py-2 text-foreground hover:text-primary transition-colors"
-              >
-                Combos Especiales
-              </button>
-              <button
-                onClick={() => scrollToSection('testimonios')}
-                className="text-left py-2 text-foreground hover:text-primary transition-colors"
-              >
-                Testimonios
-              </button>
+              {/* Botón Combos ocultado en menú móvil */}
+              {/* Botón Testimonios eliminado en menú móvil */}
               <button
                 onClick={() => scrollToSection('contacto')}
                 className="text-left py-2 text-foreground hover:text-primary transition-colors"
@@ -140,11 +122,11 @@ const Header = ({ onCartClick }: HeaderProps) => {
               <div className="pt-3 border-t">
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground py-1">
                   <Phone className="h-4 w-4" />
-                  <span>+502 XXXX-XXXX</span>
+                  <span>+502 3652-5443</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground py-1">
                   <Clock className="h-4 w-4" />
-                  <span>Lunes a Domingo: 6:00 AM - 8:00 PM</span>
+                  <span>Martes a Domingo: 6:00 PM - 9:00 PM</span>
                 </div>
               </div>
             </nav>

@@ -4,13 +4,23 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ContactSection = () => {
   const openGoogleMaps = () => {
-    // Coordenadas aproximadas de Aldea El Jocote, Quesada, Jutiapa
-    const mapsUrl = "https://maps.google.com/maps?q=Aldea+El+Jocote,+Quesada,+Jutiapa,+Guatemala&t=&z=15&ie=UTF8&iwloc=&output=embed";
-    window.open(`https://www.google.com/maps/search/Aldea+El+Jocote,+Quesada,+Jutiapa,+Guatemala`, '_blank');
+    // Coordenadas exactas: 14.27452, -90.04424
+    const lat = 14.27452;
+    const lng = -90.04424;
+    // URL de navegación universal (Google Maps web)
+    const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+    window.open(directionsUrl, '_blank');
+  };
+
+  const openWaze = () => {
+    const lat = 14.27452;
+    const lng = -90.04424;
+    const wazeUrl = `https://waze.com/ul?ll=${lat},${lng}&navigate=yes`;
+    window.open(wazeUrl, '_blank');
   };
 
   const callPhone = () => {
-    window.open('tel:+50200000000');
+    window.open('tel:+50236525443');
   };
 
   return (
@@ -44,10 +54,16 @@ const ContactSection = () => {
                 <p className="text-muted-foreground mb-4">
                   Jutiapa, Guatemala
                 </p>
-                <Button onClick={openGoogleMaps} variant="outline" className="w-full">
-                  <Navigation className="mr-2 h-4 w-4" />
-                  Ver en Google Maps
-                </Button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <Button onClick={openGoogleMaps} variant="outline" className="w-full">
+                    <Navigation className="mr-2 h-4 w-4" />
+                    Ver en Google Maps
+                  </Button>
+                  <Button onClick={openWaze} variant="outline" className="w-full">
+                    <Navigation className="mr-2 h-4 w-4" />
+                    Ir ahora (Waze)
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
@@ -60,7 +76,7 @@ const ContactSection = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-foreground font-medium mb-4">
-                  +502 XXXX-XXXX
+                  +502 3652-5443
                 </p>
                 <Button onClick={callPhone} variant="outline" className="w-full">
                   <Phone className="mr-2 h-4 w-4" />
@@ -78,16 +94,8 @@ const ContactSection = () => {
               </CardHeader>
               <CardContent className="space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Lunes - Viernes:</span>
-                  <span className="font-medium">6:00 AM - 8:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Sábados:</span>
-                  <span className="font-medium">6:00 AM - 9:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Domingos:</span>
-                  <span className="font-medium">7:00 AM - 8:00 PM</span>
+                  <span className="text-muted-foreground">Martes - Domingo:</span>
+                  <span className="font-medium">6:00 PM - 9:00 PM</span>
                 </div>
                 <div className="mt-4 p-3 bg-primary/10 rounded-md">
                   <p className="text-sm text-primary font-medium">
@@ -97,23 +105,14 @@ const ContactSection = () => {
               </CardContent>
             </Card>
 
-            {/* Información adicional */}
-            <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-6 border border-primary/10">
-              <h3 className="font-bold text-lg mb-3 text-primary">¿Cómo llegar?</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <p>• Desde Jutiapa: Tomar la carretera hacia Quesada (15 minutos)</p>
-                <p>• Desde Guatemala: Carretera CA-1 hacia Jutiapa, luego a Quesada</p>
-                <p>• Transporte público: Buses locales desde Jutiapa cada 30 minutos</p>
-                <p>• Estacionamiento disponible frente al local</p>
-              </div>
-            </div>
+            {/* Información adicional (movida debajo del grid para centrar a nivel de página) */}
           </div>
 
           {/* Mapa embebido */}
           <div className="relative">
             <div className="bg-muted rounded-lg overflow-hidden shadow-lg h-[600px]">
               <iframe
-                src="https://maps.google.com/maps?q=Aldea+El+Jocote,+Quesada,+Jutiapa,+Guatemala&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src={`https://www.google.com/maps?q=14.27452,-90.04424&z=16&output=embed`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -125,7 +124,7 @@ const ContactSection = () => {
             </div>
             
             {/* Overlay con información rápida */}
-            <div className="absolute top-4 left-4 bg-background/95 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-xs">
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-background/95 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-xs text-center">
               <h4 className="font-bold text-primary mb-2">Doña Toya La Pupusería</h4>
               <p className="text-sm text-muted-foreground">
                 Aldea El Jocote, Quesada, Jutiapa
@@ -138,19 +137,29 @@ const ContactSection = () => {
           </div>
         </div>
 
+        {/* Información adicional centrada */}
+        <div className="mt-6">
+          <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-6 border border-primary/10 max-w-2xl mx-auto">
+            <h3 className="font-bold text-lg mb-3 text-primary text-center">¿Cómo llegar?</h3>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p>• Desde Jutiapa: Tomar la carretera hacia Quesada (15 minutos)</p>
+              <p>• Desde Guatemala: Carretera CA-1 hacia Jutiapa, luego a Quesada</p>
+              <p>• Transporte público: Buses locales desde Jutiapa cada 30 minutos</p>
+              <p>• Estacionamiento disponible frente al local</p>
+            </div>
+          </div>
+        </div>
+
         {/* Call to action final */}
         <div className="mt-12 text-center">
           <div className="bg-primary/10 rounded-2xl p-8 max-w-2xl mx-auto border border-primary/20">
-            <h3 className="text-xl font-bold mb-3 text-primary">
+            <h3 className="text-xl font-bold mb-3 text-primary text-center">
               ¡Te esperamos con los brazos abiertos!
             </h3>
             <p className="text-muted-foreground mb-4">
               Ven y disfruta de la verdadera experiencia de las pupusas tradicionales guatemaltecas. 
               Doña Toya y su familia estarán encantados de atenderte.
             </p>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Hacer Pedido por WhatsApp
-            </Button>
           </div>
         </div>
       </div>

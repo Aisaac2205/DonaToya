@@ -14,21 +14,6 @@ const MenuSection = () => {
             Hechas con amor y tradición familiar. Cada pupusa es preparada al momento 
             con ingredientes frescos y auténticos de la región.
           </p>
-          
-          <div className="flex items-center justify-center space-x-8 mt-8 text-sm text-muted-foreground">
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-primary rounded-full"></div>
-              <span>Hechas al momento</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-secondary rounded-full"></div>
-              <span>Ingredientes frescos</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-accent rounded-full"></div>
-              <span>Receta tradicional</span>
-            </div>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -52,19 +37,19 @@ const MenuSection = () => {
             <div>
               <div className="text-2xl mb-2">🌽</div>
               <p>
-                <strong>Masa de maíz</strong> molida diariamente con técnicas ancestrales
+                <strong>Masa de maíz molida diariamente con técnicas familiares.</strong>
               </p>
             </div>
             <div>
               <div className="text-2xl mb-2">🧀</div>
               <p>
-                <strong>Queso fresco</strong> de productores locales de Jutiapa
+                <strong>Queso de productores locales de Jutiapa para un sabor natural y de casa.</strong>
               </p>
             </div>
             <div>
               <div className="text-2xl mb-2">🔥</div>
               <p>
-                <strong>Comal de barro</strong> que le da ese sabor único e inigualable
+                <strong>Hechas en comal y a mano que le da ese sabor único e inigualable.</strong>
               </p>
             </div>
           </div>

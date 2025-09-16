@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { ShoppingCart, Plus, Minus, Trash2, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { toast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -18,10 +21,19 @@ interface CartDrawerProps {
 
 const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
   const { cart, updateQuantity, removeFromCart, clearCart, generateWhatsAppMessage } = useCart();
+  const [customerName, setCustomerName] = useState("");
 
   const sendWhatsAppOrder = () => {
-    const message = generateWhatsAppMessage();
-    const phoneNumber = "50200000000"; // Número placeholder
+    if (!customerName.trim()) {
+      toast({
+        title: "Ingresa tu nombre",
+        description: "Por favor, escribe tu nombre y apellido para el pedido",
+        variant: "destructive",
+      });
+      return;
+    }
+    const message = generateWhatsAppMessage(customerName);
+    const phoneNumber = "50236525443";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -136,6 +148,16 @@ const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
 
           <Separator className="my-4" />
 
+          {/* Nombre del cliente */}
+          <div className="mb-4">
+            <label className="text-sm font-medium mb-2 block">Nombre y apellido</label>
+            <Input
+              placeholder="Ej. Juan Pérez"
+              value={customerName}
+              onChange={(e) => setCustomerName(e.target.value)}
+            />
+          </div>
+
           {/* Total y acciones */}
           <div className="space-y-4">
             <div className="flex justify-between items-center text-lg font-bold">
@@ -148,6 +170,7 @@ const CartDrawer = ({ isOpen, onClose }: CartDrawerProps) => {
                 onClick={sendWhatsAppOrder}
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold"
                 size="lg"
+                disabled={!customerName.trim()}
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Enviar Pedido por WhatsApp

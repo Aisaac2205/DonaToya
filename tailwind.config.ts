@@ -110,10 +110,10 @@ export default {
         },
         "pulse-golden": {
           "0%, 100%": {
-            boxShadow: "0 0 0 0 hsl(51 100% 50% / 0.7)"
+            boxShadow: "0 0 0 0 hsl(45 100% 50% / 0.7)"
           },
           "70%": {
-            boxShadow: "0 0 0 10px hsl(51 100% 50% / 0)"
+            boxShadow: "0 0 0 10px hsl(45 100% 50% / 0)"
           }
         }
       },

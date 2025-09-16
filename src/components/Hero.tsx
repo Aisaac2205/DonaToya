@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-pupuseria.jpg";
+import heroImg from "@/assets/hero-pupuseria_.jpg";
 
 const Hero = () => {
   const scrollToMenu = () => {
@@ -7,6 +7,13 @@ const Hero = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const openWhatsAppSpecialOrder = () => {
+    const phone = '50236525443';
+    const message = 'Hola Doña Toya, deseo realizar un pedido especial. ¿Podrían ayudarme?';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
   };
 
   return (
@@ -51,13 +58,14 @@ const Hero = () => {
             size="lg" 
             variant="outline"
             className="border-white text-white hover:bg-white hover:text-primary bg-white/10 backdrop-blur-sm"
+            onClick={openWhatsAppSpecialOrder}
           >
             Hacer Pedido
           </Button>
         </div>
         
         <div className="mt-12 text-center animate-bounce-gentle">
-          <p className="text-sm opacity-75 mb-2">Tradición familiar desde 1985</p>
+          <p className="text-sm opacity-75 mb-2">Tradición familiar desde 1999</p>
           <div className="flex items-center justify-center space-x-2 text-sm">
             <span>⭐⭐⭐⭐⭐</span>
             <span className="opacity-90">Calidad que se siente</span>

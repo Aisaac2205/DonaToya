@@ -1,23 +1,25 @@
-import { Pupusa, Combo } from '@/types';
-import pupusaFrijolQuesoImg from '@/assets/pupusa-frijol-queso.jpg';
-import pupusaQuesoImg from '@/assets/pupusa-queso.jpg';
-import pupusaRevueltaImg from '@/assets/pupusa-revuelta.jpg';
+
+import type { Pupusa, Combo } from '@/types';
+
+import pupusaChicharronImg from '@/assets/pupusas_chicharron.jpg';
+import pupusaQuesoImg from '@/assets/pupusas_queso.jpg';
+import pupusaRevueltaImg from '@/assets/pupusas_revuelta.jpg';
 
 export const pupusas: Pupusa[] = [
-  {
-    id: 'pupusa-frijol-queso',
-    name: 'Pupusa de Frijol con Queso',
-    description: 'Deliciosa pupusa tradicional rellena de frijoles rojos y queso fresco derretido',
-    price: 8.00,
-    image: pupusaFrijolQuesoImg,
-    category: 'tradicional'
-  },
   {
     id: 'pupusa-queso',
     name: 'Pupusa de Queso',
     description: 'Clásica pupusa con abundante queso fresco que se derrite en tu boca',
     price: 8.00,
     image: pupusaQuesoImg,
+    category: 'tradicional'
+  },
+  {
+    id: 'pupusa-chicharron',
+    name: 'Pupusa de Chicharrón',
+    description: 'Pupusa rellena de chicharrón natual de la región',
+    price: 8.00,
+    image: pupusaChicharronImg,
     category: 'tradicional'
   },
   {
@@ -46,7 +48,7 @@ export const combos: Combo[] = [
     description: '4 pupusas variadas + 2 refrescos + curtido extra',
     price: 30.00,
     originalPrice: 36.00,
-    image: pupusaFrijolQuesoImg,
+    image: pupusaQuesoImg,  
     items: ['4 Pupusas Variadas', '2 Refrescos', 'Curtido Extra']
   },
   {
