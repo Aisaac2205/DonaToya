@@ -1,6 +1,36 @@
 import { Heart, MapPin, Phone, Clock } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+// Horario: martes a domingo de 18:00 a 21:00 hora de Guatemala
+function useGuatemalaOpenStatus() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => setNow(new Date()), 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const status = useMemo(() => {
+    const guatemalaTime = new Date(
+      now.toLocaleString('en-US', { timeZone: 'America/Guatemala' })
+    );
+    const day = guatemalaTime.getDay();
+    const hour = guatemalaTime.getHours();
+    const min = guatemalaTime.getMinutes();
+    const isOpenDay = day !== 1;
+    const isOpenHour = (hour > 18 || (hour === 18 && min >= 0)) && (hour < 21);
+    return isOpenDay && isOpenHour;
+  }, [now]);
+
+  useEffect(() => {
+    setIsOpen(status);
+  }, [status]);
+
+  return isOpen;
+}
 
 const Footer = () => {
+  const isOpen = useGuatemalaOpenStatus();
   return (
     <footer className="bg-foreground text-background py-12">
       <div className="container mx-auto px-4">
@@ -37,7 +67,14 @@ const Footer = () => {
               </div>
               <div className="flex items-center justify-center md:justify-center space-x-2">
                 <Clock className="h-4 w-4 text-primary" />
-                <span className="text-background/80">6:00 PM - 9:00 PM</span>
+                <span className="text-background/80">
+                  {isOpen ? (
+                    <span className="text-green-500 font-semibold">Abierto ahora</span>
+                  ) : (
+                    <span className="text-red-500 font-semibold">Cerrado ahora</span>
+                  )}
+                  <span className="ml-2">Martes-Domingo 6:00 PM - 9:00 PM</span>
+                </span>
               </div>
             </div>
             <div className="mt-6">

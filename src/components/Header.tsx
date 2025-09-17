@@ -1,4 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
+// Horario: martes a domingo de 18:00 a 21:00 hora de Guatemala
+function useGuatemalaOpenStatus() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => setNow(new Date()), 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const status = useMemo(() => {
+    // Obtener hora de Guatemala
+    const guatemalaTime = new Date(
+      now.toLocaleString('en-US', { timeZone: 'America/Guatemala' })
+    );
+    const day = guatemalaTime.getDay(); // 0=Dom, 1=Lun, ..., 6=Sab
+    const hour = guatemalaTime.getHours();
+    const min = guatemalaTime.getMinutes();
+    // Abierto martes(2) a domingo(0,2,3,4,5,6) de 18:00 a 21:00
+    const isOpenDay = day !== 1; // Lunes cerrado
+    const isOpenHour = (hour > 18 || (hour === 18 && min >= 0)) && (hour < 21);
+    return isOpenDay && isOpenHour;
+  }, [now]);
+
+  useEffect(() => {
+    setIsOpen(status);
+  }, [status]);
+
+  return isOpen;
+}
 import { ShoppingCart, Menu, X, MapPin, Phone, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +52,7 @@ const Header = ({ onCartClick }: HeaderProps) => {
     setIsMenuOpen(false);
   };
 
+  const isOpen = useGuatemalaOpenStatus();
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b shadow-sm">
       <div className="container mx-auto px-4">
@@ -51,7 +82,14 @@ const Header = ({ onCartClick }: HeaderProps) => {
             </div>
             <div className="flex items-center space-x-1 text-muted-foreground">
               <Clock className="h-4 w-4" />
-              <span>6:00 AM - 8:00 PM</span>
+              <span>
+                {isOpen ? (
+                  <span className="text-green-600 font-semibold">Abierto ahora</span>
+                ) : (
+                  <span className="text-red-500 font-semibold">Cerrado ahora</span>
+                )}
+                <span className="ml-2">Martes-Domingo 6:00 PM - 9:00 PM</span>
+              </span>
             </div>
           </div>
 

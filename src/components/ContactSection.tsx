@@ -99,7 +99,7 @@ const ContactSection = () => {
                 </div>
                 <div className="mt-4 p-3 bg-primary/10 rounded-md">
                   <p className="text-sm text-primary font-medium">
-                    ⏰ Las pupusas están frescas todo el día, pero recomendamos venir temprano para la mejor experiencia
+                  Las pupusas están calientitas, pero recomendamos venir temprano para la mejor experiencia de saborearlas recién hechas.
                   </p>
                 </div>
               </CardContent>
@@ -122,44 +122,6 @@ const ContactSection = () => {
                 title="Ubicación de Doña Toya La Pupusería"
               />
             </div>
-            
-            {/* Overlay con información rápida */}
-            <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-background/95 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-xs text-center">
-              <h4 className="font-bold text-primary mb-2">Doña Toya La Pupusería</h4>
-              <p className="text-sm text-muted-foreground">
-                Aldea El Jocote, Quesada, Jutiapa
-              </p>
-              <div className="flex items-center space-x-1 mt-2 text-sm">
-                <span>⭐⭐⭐⭐⭐</span>
-                <span className="text-muted-foreground">Abierto ahora</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Información adicional centrada */}
-        <div className="mt-6">
-          <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-6 border border-primary/10 max-w-2xl mx-auto">
-            <h3 className="font-bold text-lg mb-3 text-primary text-center">¿Cómo llegar?</h3>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <p>• Desde Jutiapa: Tomar la carretera hacia Quesada (15 minutos)</p>
-              <p>• Desde Guatemala: Carretera CA-1 hacia Jutiapa, luego a Quesada</p>
-              <p>• Transporte público: Buses locales desde Jutiapa cada 30 minutos</p>
-              <p>• Estacionamiento disponible frente al local</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Call to action final */}
-        <div className="mt-12 text-center">
-          <div className="bg-primary/10 rounded-2xl p-8 max-w-2xl mx-auto border border-primary/20">
-            <h3 className="text-xl font-bold mb-3 text-primary text-center">
-              ¡Te esperamos con los brazos abiertos!
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Ven y disfruta de la verdadera experiencia de las pupusas tradicionales guatemaltecas. 
-              Doña Toya y su familia estarán encantados de atenderte.
-            </p>
           </div>
         </div>
       </div>
