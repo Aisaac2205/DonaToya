@@ -1,73 +1,65 @@
-# Welcome to your Lovable project
 
-## Project info
+# Doña Toya - Pupusería y Comida Típica
 
-**URL**: https://lovable.dev/projects/be2db11c-bb56-4a50-99de-68fdaea23454
+Bienvenido al repositorio oficial de **Doña Toya**, una aplicación web para la gestión y promoción de la pupusería familiar más tradicional de Jutiapa, Guatemala.
 
-## How can I edit this code?
+## Descripción del Proyecto
 
-There are several ways of editing your application.
+Este proyecto es una plataforma moderna y responsiva para mostrar el menú, combos, información de contacto y ubicación de la pupusería Doña Toya. Permite a los clientes consultar productos, realizar pedidos y conocer la historia y valores del negocio.
 
-**Use Lovable**
+## Características
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/be2db11c-bb56-4a50-99de-68fdaea23454) and start prompting.
+- Menú digital de pupusas y combos con imágenes y descripciones.
+- Carrito de compras interactivo.
+- Sección de contacto y ubicación con horarios automatizados (detecta si el local está abierto o cerrado según la hora de Guatemala).
+- Diseño responsivo y atractivo, optimizado para dispositivos móviles y escritorio.
+- Animaciones y experiencia de usuario moderna.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tecnologías Utilizadas
 
-**Use your preferred IDE**
+- **Vite** (entorno de desarrollo y build)
+- **React** (librería principal de UI)
+- **TypeScript** (tipado estático)
+- **Tailwind CSS** (estilizado rápido y responsivo)
+- **shadcn-ui** (componentes UI reutilizables)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Instalación y Uso Local
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clona el repositorio:
+	```sh
+	git clone https://github.com/Aisaac2205/DonaToya.git
+	cd DonaToya
+	```
+2. Instala las dependencias:
+	```sh
+	npm install
+	```
+3. Inicia el servidor de desarrollo:
+	```sh
+	npm run dev
+	```
+4. Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
-Follow these steps:
+## Despliegue en Producción
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+El proyecto está preparado para ser desplegado en Railway, Vercel, Netlify o cualquier plataforma compatible con aplicaciones Vite/React.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Para Railway:
+- Incluye `Dockerfile` y `railway.json` para despliegue automático.
+- Scripts de build y start ya configurados en `package.json`.
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Personalización
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Puedes modificar el menú, imágenes y textos editando los archivos en la carpeta `src/`.
 
-**Edit a file directly in GitHub**
+## Contribuciones
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+¡Las contribuciones son bienvenidas! Abre un issue o pull request para sugerir mejoras o reportar problemas.
 
-**Use GitHub Codespaces**
+## Licencia
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Este proyecto es de uso privado para la familia y clientes de Doña Toya. Para usos comerciales, contactar al propietario.
 
-## What technologies are used for this project?
+---
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/be2db11c-bb56-4a50-99de-68fdaea23454) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Doña Toya - Tradición, sabor y familia desde 1999.**
